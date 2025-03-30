@@ -73,18 +73,18 @@ def recalculate_original_values(hourly_mean):
         t1 = (
             hourly_mean_with_original.at[i - 1, "hour"]
             - hourly_mean_with_original.at[0, "hour"]
-        ).total_seconds()/360
+        ).total_seconds()/3600
         t2 = (
             hourly_mean_with_original.at[i, "hour"]
             - hourly_mean_with_original.at[0, "hour"]
-        ).total_seconds()/360
+        ).total_seconds()/3600
 
         y1 = hourly_mean_with_original.at[i - 1, "cumulative_mean"]
         y2 = hourly_mean_with_original.at[i, "cumulative_mean"]
 
         original_value = (t2 * y2 - t1 * y1) / (t2 - t1)
 
-        hourly_mean_with_original.at[i, "Original"] = original_value
+        hourly_mean_with_original.at[i, "Origin"] = original_value
 
     return hourly_mean_with_original
 
