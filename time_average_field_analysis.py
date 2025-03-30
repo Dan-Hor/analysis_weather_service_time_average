@@ -73,11 +73,11 @@ def recalculate_original_values(hourly_mean):
         t1 = (
             hourly_mean_with_original.at[i - 1, "hour"]
             - hourly_mean_with_original.at[0, "hour"]
-        ).total_seconds() / 3600
+        ).total_seconds()/360
         t2 = (
             hourly_mean_with_original.at[i, "hour"]
             - hourly_mean_with_original.at[0, "hour"]
-        ).total_seconds() / 3600
+        ).total_seconds()/360
 
         y1 = hourly_mean_with_original.at[i - 1, "cumulative_mean"]
         y2 = hourly_mean_with_original.at[i, "cumulative_mean"]
