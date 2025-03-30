@@ -67,7 +67,7 @@ def recalculate_original_values(hourly_mean):
     - hourly_mean_with_original: DataFrame with 'Original' in addition to 'cumulative_mean'
     """
     hourly_mean_with_original = hourly_mean.copy()
-    hourly_mean_with_original["Original"] = 0.0
+    hourly_mean_with_original["Origin"] = 0.0
 
     for i in range(1, len(hourly_mean_with_original)):
         t1 = (
